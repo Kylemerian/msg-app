@@ -6,7 +6,9 @@
 class UIChatPage{
     sf::RenderWindow * window;
 public:
-    UIChatPage(sf::RenderWindow * wind){}
+    UIChatPage(sf::RenderWindow * wind) : window(wind){
+        
+    }
 
     void init();
 

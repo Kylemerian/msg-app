@@ -3,16 +3,14 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <cstring>
-//#include "FormSFML.h"
 #include "constants.hpp"
 #include "UIController.hpp"
+#include "style.hpp"
 
 using namespace std;
 
-sf::TcpSocket socket;
-
 int main(int argc, char ** argv){
-    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Chat", sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Chat");
     
     window.setFramerateLimit(100);
     sf::View view = window.getDefaultView();
@@ -47,7 +45,7 @@ int main(int argc, char ** argv){
 
             UI.EventUI(event);
         }
-        window.clear(sf::Color(14, 22, 33));
+        window.clear(getBGColor());
         UI.DrawUI();
         window.display();
     }

@@ -1,7 +1,7 @@
 all: main
 
-main: client.o UIController.o UISignUpPage.o UISignInPage.o UIChatPage.o
-	g++ client.o UIController.o UISignUpPage.o UISignInPage.o UIChatPage.o -o msg-app -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
+main: client.o UIController.o UISignUpPage.o UISignInPage.o UIChatPage.o style.o
+	g++ client.o UIController.o UISignUpPage.o UISignInPage.o UIChatPage.o style.o -o msg-app -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
 
 client.o: client.cpp
 	g++ -c client.cpp
@@ -20,6 +20,9 @@ UIChatPage.o: UIChatPage.cpp UIChatPage.hpp
 
 sockets.o: sockets.cpp sockets.hpp
 	g++ -c sockets.cpp
+
+style.o: style.cpp style.hpp
+	g++ -c style.cpp
 
 clean:
 	rm -rf *.o
